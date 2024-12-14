@@ -86,6 +86,11 @@
         '';
       }
 
+      {
+        plugin = pkgs.vimPlugins.obsidian-nvim;
+        config = toLuaFile ./nvim/plugin/obsidian.lua;
+      }
+
       pkgs.vimPlugins.lsp_signature-nvim
       pkgs.vimPlugins.comment-nvim
       pkgs.vimPlugins.nerdtree
@@ -137,6 +142,17 @@
     vim.keymap.set('n', '<leader>sf'  , builtin.find_files, {})
     vim.keymap.set('n', '<leader>sg'  , builtin.live_grep, {})
     vim.keymap.set('n', '<leader>sd'  , builtin.diagnostics , {})
+
+    -- For note taking specifically, this plugin is great
+    vim.keymap.set('n', '<leader>ot'  , ':ObsidianTags<CR>', {
+      noremap = true, silent = true
+    })
+    vim.keymap.set('n', '<leader>on'  , ':ObsidianNew<CR>', {
+      noremap = true, silent = true
+    })
+    vim.keymap.set('n', '<leader>ow'  , ':ObsidianWorkspace<CR>', {
+      noremap = true, silent = true
+    })
 
     -- This is a super nice for large paragraph yanks
     local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
