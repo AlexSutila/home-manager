@@ -55,6 +55,9 @@
     set -g base-index 1
     setw -g pane-base-index 1
 
+    # I don't use the window switcher
+    bind-key w choose-session
+
     # Easy switching back and fourth between two sessions
     unbind Space
     bind-key Space switch-client -l
