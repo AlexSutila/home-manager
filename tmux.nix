@@ -26,6 +26,10 @@
     set -g renumber-windows on
     set-option -g detach-on-destroy off
 
+    # Fix coloring
+    set -g default-terminal "screen-256color"
+    set -as terminal-features ",xterm-256color:RGB"
+
     # Remap prefix key
     set -g prefix C-f
 
