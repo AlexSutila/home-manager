@@ -5,13 +5,18 @@
 eval "$(zoxide init bash)"
 source <(fzf --bash)
 
-set -o vi
+alias on='nvim -c "ObsidianNew"'
+alias os='nvim -c "ObsidianSearch"'
+alias ot='nvim -c "ObsidianTags"'
+set -o vi # vim keys in terminal go hard
+
 alias cc='clear'
 alias ta='s=`tmux ls | fzf`; tmux attach -t "${s%%:*}"'
 alias tn='tmux new -s'
 alias tk='s=`tmux ls | fzf`; tmux kill-session -t "${s%%:*}"'
-alias gr='~/.scripts/tmux_repo.sh'
-alias gz='~/.scripts/tmux_zoxide.sh'
+alias gr='~/.scripts/tmux_zoxide.sh'
+alias gR='~/.scripts/tmux_repo.sh'
+alias gS='~/.scripts/tmux_remote.sh'
 alias t='tmux'
 
 alias vpnstart='~/git/dots/scripts/vpn_connect.sh'

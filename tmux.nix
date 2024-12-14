@@ -72,9 +72,10 @@
     unbind '"'
     unbind '%'
 
-    # Some random workflow binds for navigation
-    bind-key z run-shell "bash ~/.scripts/tmux_zoxide.sh"
-    bind-key r run-shell "bash ~/.scripts/tmux_repo.sh"
+    # Some random workflow binds for navigation and remote work
+    bind-key g run-shell "bash ~/.scripts/tmux_zoxide.sh"
+    bind-key G run-shell "bash ~/.scripts/tmux_repo.sh"
+    bind-key S run-shell "bash ~/.scripts/tmux_remote.sh"
 
     # For remote work
     bind -T root F12 set prefix None \;\
