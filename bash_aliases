@@ -19,6 +19,7 @@ alias gR='~/.scripts/tmux_repo.sh'
 alias gS='~/.scripts/tmux_remote.sh'
 alias t='tmux'
 
-alias vpnstart='~/git/dots/scripts/vpn_connect.sh'
+alias vpnstart='~/.scripts/vpn_connect.sh'
 alias vpnstop='/opt/cisco/secureclient/bin/vpn disconnect'
 alias vpnstate='/opt/cisco/secureclient/bin/vpn state'
+alias vmstart='~/.scripts/vm_start.sh'
