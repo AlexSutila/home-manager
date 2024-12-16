@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "tmux-256color";
+    terminal = "xterm-256color";
     historyLimit = 100000;
     plugins = with pkgs;
       [
@@ -34,7 +34,6 @@
     set-option -g detach-on-destroy off
 
     # Fix coloring
-    set -g default-terminal "screen-256color"
     set -as terminal-features ",xterm-256color:RGB"
 
     # Remap prefix key
