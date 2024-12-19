@@ -36,10 +36,27 @@
         "type": "github"
       }
     },
+    "plugin-transfer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721214675,
+        "narHash": "sha256-CtHJbX/c4lqoEYPjVSMmEK81RBjAlkfrSwpZVnlWSm0=",
+        "owner": "coffebar",
+        "repo": "transfer.nvim",
+        "rev": "19ce83a0341f0acee74afc39dda3a32c7b9a6941",
+        "type": "github"
+      },
+      "original": {
+        "owner": "coffebar",
+        "repo": "transfer.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "plugin-transfer": "plugin-transfer"
       }
     }
   },

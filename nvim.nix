@@ -1,6 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          own-transfer-nvim = prev.vimUtils.buildVimPlugin {
+            name = "transfer";
+            src = inputs.plugin-transfer;
+          };
+        };
+      })
+    ];
+  };
+
   programs.neovim =
   let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -94,6 +107,13 @@
       pkgs.vimPlugins.lsp_signature-nvim
       pkgs.vimPlugins.comment-nvim
       pkgs.vimPlugins.nerdtree
+
+      {
+        plugin = pkgs.vimPlugins.own-transfer-nvim;
+        config = toLua ''
+        require("transfer").setup{}
+        '';
+      }
     ];
 
     extraLuaConfig = ''
