@@ -77,6 +77,7 @@
     bind-key C run-shell "bash ~/.scripts/tmux_remote.sh window"
     bind-key V run-shell "bash ~/.scripts/tmux_remote.sh hori"
     bind-key S run-shell "bash ~/.scripts/tmux_remote.sh vert"
+    bind-key i run-shell "bash ~/.scripts/istolethis.sh"
 
     # For remote work
     bind -T root F12 set prefix None \;\
