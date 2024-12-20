@@ -111,7 +111,28 @@
       {
         plugin = pkgs.vimPlugins.own-transfer-nvim;
         config = toLua ''
-        require("transfer").setup{}
+        require("transfer").setup({
+          upload_rsync_params = {
+            "-rlzi",
+            "--checksum",
+            "--exclude",
+            ".git",
+            "--exclude",
+            ".idea",
+            "--exclude",
+            ".DS_Store",
+            "--exclude",
+            ".nvim",
+            "--exclude",
+            "*.pyc",
+          },
+          download_rsync_params = {
+            "-rlzi",
+            "--checksum",
+            "--exclude",
+            ".git",
+          },
+        })
         '';
       }
     ];
@@ -157,6 +178,7 @@
     vim.keymap.set('n', 'H', ":bprevious<CR>")
     vim.keymap.set('n', 'L', ":bnext<CR>")
     vim.keymap.set('n', '<leader>t'  , ":NERDTreeToggle<CR>")
+    vim.keymap.set('n', '<leader>uu' , ":TransferUpload .<CR>")
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>sf'  , builtin.find_files, {})
