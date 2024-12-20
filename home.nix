@@ -16,6 +16,7 @@
     pkgs.ripgrep
     pkgs.zoxide
     pkgs.rsync
+    pkgs.xclip
     pkgs.tree
     pkgs.fzf
     pkgs.gef # gdb extras

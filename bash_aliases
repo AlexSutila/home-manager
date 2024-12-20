@@ -10,6 +10,7 @@ alias os='nvim -c "ObsidianSearch"'
 alias ot='nvim -c "ObsidianTags"'
 set -o vi # vim keys in terminal go hard
 
+alias clpbd='xclip -sel clip'
 alias cc='clear'
 alias ta='s=`tmux ls | fzf`; tmux attach -t "${s%%:*}"'
 alias tn='tmux new -s'
