@@ -15,6 +15,7 @@
   home.packages = [
     pkgs.ripgrep
     pkgs.zoxide
+    pkgs.rsync
     pkgs.tree
     pkgs.fzf
     pkgs.gef # gdb extras
