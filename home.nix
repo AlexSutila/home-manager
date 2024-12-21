@@ -13,6 +13,7 @@
   ];
 
   home.packages = [
+    pkgs.starship # bash prompt
     pkgs.ripgrep
     pkgs.zoxide
     pkgs.rsync

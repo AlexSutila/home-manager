@@ -2,6 +2,7 @@
 # based distros which source ~/.bash_aliases in the default bashrc. This
 # technically does a bit more than just crease aliases but idfc.
 
+eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 source <(fzf --bash)
 
