@@ -13,10 +13,10 @@ done
 
 topic=""
 if [[ "$topic_constraint" == "lang" ]]; then
-  topic=$(printf "go\nrust\nc" | fzf --tmux) 
+  topic=$(printf "go\nrust\nc" | fzf) 
   stty sane
 else
-  topic=$(curl -s cht.sh/:list | fzf --tmux)
+  topic=$(curl -s cht.sh/:list | fzf)
   stty sane
 fi
 
@@ -24,7 +24,8 @@ if [[ -z "$topic" ]]; then
   exit 0
 fi
 
-sheet=$(curl -s cht.sh/$topic/:list | fzf --tmux)
+# sheet=$(curl -s cht.sh/$topic/:list | fzf --tmux)
+read -p "Query: " sheet
 
 if [[ -z "$sheet" ]]; then
   tmux neww bash -c "curl -s cht.sh/$topic?style=rrt | less -R"
