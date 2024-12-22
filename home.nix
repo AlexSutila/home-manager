@@ -8,6 +8,7 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   imports = [
+    ./vscode.nix
     ./tmux.nix
     ./nvim.nix
   ];
@@ -20,6 +21,8 @@
     pkgs.xclip
     pkgs.tree
     pkgs.fzf
+
+    pkgs.jupyter
     pkgs.gef # gdb extras
   ];
 
@@ -28,5 +31,6 @@
     ".scripts".source = ./scripts;
   };
 
+  nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
 }
