@@ -14,15 +14,15 @@
   ];
 
   home.packages = [
+    pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
+    pkgs.jupyter
     pkgs.ripgrep
     pkgs.zoxide
     pkgs.rsync
     pkgs.xclip
     pkgs.tree
     pkgs.fzf
-
-    pkgs.jupyter
     pkgs.gef # gdb extras
   ];
 
