@@ -11,7 +11,7 @@ alias os='nvim -c "ObsidianSearch"'
 alias ot='nvim -c "ObsidianTags"'
 set -o vi # vim keys in terminal go hard
 
-alias clpbd='xclip -sel clip'
+alias clipbd='xclip -sel clip'
 alias cc='clear'
 alias ta='s=`tmux ls | fzf`; tmux attach -t "${s%%:*}"'
 alias tn='tmux new -s'
@@ -21,6 +21,7 @@ alias gR='~/.scripts/tmux_repo.sh'
 alias gS='~/.scripts/tmux_remote.sh'
 alias t='tmux'
 
+alias jnb='jupyter notebook --no-browser'
 alias vpnstart='~/.scripts/vpn_connect.sh'
 alias vpnstop='/opt/cisco/secureclient/bin/vpn disconnect'
 alias vpnstate='/opt/cisco/secureclient/bin/vpn state'
