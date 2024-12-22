@@ -14,6 +14,7 @@
   ];
 
   home.packages = [
+    pkgs.moreutils
     pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
     pkgs.jupyter
