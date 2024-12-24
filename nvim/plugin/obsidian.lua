@@ -55,6 +55,13 @@ if #workspaces > 0 then
         opts = { noremap = false, buffer = true },
       },
 
+      ["<leader>op"] = {
+        action = function()
+          vim.cmd('ObsidianPasteImg' .. os.date("%Y-%m-%d-%H-%M-%S"))
+        end,
+        opts = { noremap = false, buffer = true },
+      },
+
       ["<leader>ol"] = {
         action = function()
           vim.cmd('ObsidianLinks')

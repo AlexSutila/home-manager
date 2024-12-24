@@ -21,6 +21,7 @@
     pkgs.ripgrep
     pkgs.zoxide
     pkgs.rsync
+    pkgs.scrot # screenshots - helpful for note taking
     pkgs.xclip
     pkgs.tree
     pkgs.fzf
