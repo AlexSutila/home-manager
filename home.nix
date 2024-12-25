@@ -17,7 +17,6 @@
     pkgs.parallel
     pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
-    pkgs.jupyter
     pkgs.ripgrep
     pkgs.zoxide
     pkgs.rsync

@@ -13,9 +13,10 @@
       vscodevim.vim
     ];
 
-    userSettings = {
-      "workbench.colorTheme" = "Catppuccin Mocha"; # Color scheme
-      "window.menuBarVisibility" = "hidden"; # This looks terrible, hiding it is my hacky fix
-    };
+    # I would, but having this json file stuck with read-only permissions is kinda problematic
+    # userSettings = {
+    #   "workbench.colorTheme" = "Catppuccin Mocha"; # Color scheme
+    #   "window.menuBarVisibility" = "hidden"; # This looks terrible, hiding it is my hacky fix
+    # };
   };
 }
