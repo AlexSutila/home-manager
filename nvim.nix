@@ -104,9 +104,11 @@
         config = toLuaFile ./nvim/plugin/obsidian.lua;
       }
 
+      pkgs.vimPlugins.vim-tmux-navigator
       pkgs.vimPlugins.lsp_signature-nvim
       pkgs.vimPlugins.comment-nvim
       pkgs.vimPlugins.nerdtree
+      pkgs.vimPlugins.luasnip
 
       {
         plugin = pkgs.vimPlugins.own-transfer-nvim;
