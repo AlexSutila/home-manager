@@ -11,15 +11,13 @@
           plugin = tmuxPlugins.catppuccin;
           extraConfig = ''
           set -g @catppuccin_flavor "mocha"
-          # set -g @catppuccin_status_right_separator "█"
-          # set -g @catppuccin_status_left_separator "█"
-          # set -g @catppuccin_application_icon "app"
-          # set -g @catppuccin_session_icon "sesh"
+          set -g @catppuccin_status_right_separator "█"
+          set -g @catppuccin_status_left_separator "█"
+          set -g @catppuccin_application_icon "app"
+          set -g @catppuccin_session_icon "sesh"
           '';
         }
-        {
-          plugin = tmuxPlugins.vim-tmux-navigator;
-        }
+        pkgs.tmuxPlugins.vim-tmux-navigator
       ];
     extraConfig = ''
 
