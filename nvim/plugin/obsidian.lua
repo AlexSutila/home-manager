@@ -81,15 +81,23 @@ if #workspaces > 0 then
     notes_subdir = "Inbox",
     new_notes_location = "notes_subdir",
 
-    note_frontmatter_func = function(note)
-      if note.title then
-        note:add_alias(note.title)
+    note_id_func = function(title)
+      local new_title = ""
+      if title ~= nil then
+        -- If title is given, transform it into valid file name.
+        new_title = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      else
+        return title
       end
+      return new_title
+    end,
+
+    note_frontmatter_func = function(note)
       local out = {
         id          = note.id       ,
-        aliases     = note.aliases  ,
-        para        = {}            ,
         tags        = note.tags     ,
+        hubs        = {}            ,
+        urls        = {}            ,
       }
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
         for k, v in pairs(note.metadata) do

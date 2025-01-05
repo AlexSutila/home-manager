@@ -16,6 +16,7 @@ local on_attach = function(_, bufnr)
   bufmap('<leader>gs', require('telescope.builtin').lsp_document_symbols)
   bufmap('<leader>gS', require('telescope.builtin').lsp_dynamic_workspace_symbols)
 
+  bufmap('<leader>ge', vim.diagnostic.open_float)
   bufmap('K', vim.lsp.buf.hover)
 
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -29,16 +30,19 @@ require('neodev').setup()
 
 -- LaTeX
 require'lspconfig'.texlab.setup{
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 
 -- C/C++
 require'lspconfig'.clangd.setup{
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 
 -- Python
 require'lspconfig'.pyright.setup{
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 
