@@ -82,21 +82,27 @@ if #workspaces > 0 then
     new_notes_location = "notes_subdir",
 
     note_id_func = function(title)
-      local new_title = ""
+      local suffix = ""
       if title ~= nil then
-        -- If title is given, transform it into valid file name.
-        new_title = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
       else
-        return title
+        for _ = 1, 4 do
+          suffix = suffix .. string.char(math.random(65, 90))
+        end
       end
-      return new_title
+      return tostring(os.time()) .. "-" .. suffix
     end,
 
     note_frontmatter_func = function(note)
+      if note.title then
+        note:add_alias(note.title)
+      end
       local out = {
+        aliases     = note.aliases  ,
         id          = note.id       ,
         tags        = note.tags     ,
-        hubs        = {}            ,
+        location    = {}            ,
+        para        = {}            ,
         urls        = {}            ,
       }
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
