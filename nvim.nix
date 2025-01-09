@@ -30,6 +30,7 @@
       clang-tools
       pyright
       texlab
+      nixd
     ];
 
     plugins = [
@@ -79,8 +80,15 @@
       pkgs.vimPlugins.nvim-treesitter-context
 
       {
-        plugin = pkgs.vimPlugins.catppuccin-nvim;
-        config = "colorscheme catppuccin-mocha";
+        plugin = pkgs.vimPlugins.onedarkpro-nvim;
+        config = toLua ''
+        require("onedarkpro").setup{
+          options = {
+            transparency = false
+          }
+        }
+        vim.cmd("colorscheme onedark")
+        '';
       }
 
       {

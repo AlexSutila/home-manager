@@ -8,7 +8,8 @@
     enable = true;
 
     extensions = with pkgs.vscode-extensions; [
-      catppuccin.catppuccin-vsc
+      # catppuccin.catppuccin-vsc
+      mskelton.one-dark-theme
       ms-toolsai.jupyter
       vscodevim.vim
     ];
