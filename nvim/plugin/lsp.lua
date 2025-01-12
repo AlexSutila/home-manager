@@ -28,31 +28,14 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 require('neodev').setup()
 
--- Nix
-require'lspconfig'.nixd.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
+-- For keeping things concise
+local function setup_basic(lang_server)
+    lang_server.setup{
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }
+end
 
--- LaTeX
-require'lspconfig'.texlab.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
--- C/C++
-require'lspconfig'.clangd.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
--- Python
-require'lspconfig'.pyright.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
-
--- Lua
 require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -66,3 +49,10 @@ require('lspconfig').lua_ls.setup {
         },
     }
 }
+
+setup_basic(require'lspconfig'.nixd)
+setup_basic(require'lspconfig'.texlab)
+setup_basic(require'lspconfig'.bashls)
+setup_basic(require'lspconfig'.rust_analyzer)
+setup_basic(require'lspconfig'.clangd)
+setup_basic(require'lspconfig'.pyright)

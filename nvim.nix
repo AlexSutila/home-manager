@@ -26,7 +26,9 @@
     viAlias = true;
 
     extraPackages = with pkgs; [
+      bash-language-server
       lua-language-server
+      rust-analyzer
       clang-tools
       pyright
       texlab
@@ -74,6 +76,8 @@
           p.tree-sitter-cpp
           p.tree-sitter-c
           p.tree-sitter-json
+          p.tree-sitter-rust
+          p.tree-sitter-markdown
         ]));
         config = toLuaFile ./nvim/plugin/treesitter.lua;
       }

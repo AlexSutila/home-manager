@@ -14,7 +14,6 @@
   ];
 
   home.packages = [
-    pkgs.parallel
     pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
     pkgs.ripgrep

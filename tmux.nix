@@ -7,7 +7,7 @@
     historyLimit = 100000;
     plugins = with pkgs;
       [
-        pkgs.tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.vim-tmux-navigator
         tmuxPlugins.onedark-theme
       ];
     extraConfig = ''
