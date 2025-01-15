@@ -113,6 +113,13 @@
       }
 
       {
+        plugin = pkgs.vimPlugins.nvim-surround;
+        config = toLua ''
+        require("nvim-surround").setup{}
+        '';
+      }
+
+      {
         plugin = pkgs.vimPlugins.obsidian-nvim;
         config = toLuaFile ./nvim/plugin/obsidian.lua;
       }
