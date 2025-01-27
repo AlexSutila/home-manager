@@ -30,6 +30,7 @@
       lua-language-server
       rust-analyzer
       clang-tools
+      marksman
       pyright
       texlab
       nixd
@@ -199,6 +200,8 @@
     vim.keymap.set('n', '<C-q>'      , ":set wrap!<CR>")
     vim.keymap.set('n', 'H', ":bprevious<CR>")
     vim.keymap.set('n', 'L', ":bnext<CR>")
+    vim.keymap.set("n", "<leader><leader>",
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>")
     vim.keymap.set('n', '<leader>t'  , ":NERDTreeToggle<CR>")
     vim.keymap.set('n', '<leader>uu' , ":TransferUpload .<CR>")
 

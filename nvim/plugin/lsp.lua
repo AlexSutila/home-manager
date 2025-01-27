@@ -9,10 +9,10 @@ local on_attach = function(_, bufnr)
 
   bufmap('gd', vim.lsp.buf.definition)
   bufmap('gD', vim.lsp.buf.declaration)
-  bufmap('gI', vim.lsp.buf.implementation)
+  bufmap('gi', vim.lsp.buf.implementation)
   bufmap('<leader>D', vim.lsp.buf.type_definition)
 
-  bufmap('<leader>gr', require('telescope.builtin').lsp_references)
+  bufmap('gr', require('telescope.builtin').lsp_references)
   bufmap('<leader>gs', require('telescope.builtin').lsp_document_symbols)
   bufmap('<leader>gS', require('telescope.builtin').lsp_dynamic_workspace_symbols)
 
@@ -56,3 +56,4 @@ setup_basic(require'lspconfig'.bashls)
 setup_basic(require'lspconfig'.rust_analyzer)
 setup_basic(require'lspconfig'.clangd)
 setup_basic(require'lspconfig'.pyright)
+setup_basic(require'lspconfig'.marksman)

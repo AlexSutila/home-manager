@@ -2,7 +2,7 @@ require('telescope').setup{
     defaults = {
         mappings = {
             n = {
-                ["d"] = require("telescope.actions").delete_buffer,
+                ["dd"] = require("telescope.actions").delete_buffer,
                 ["q"] = require("telescope.actions").close,
             }
         },

@@ -41,7 +41,7 @@ if #workspaces > 0 then
         opts = { noremap = false, expr = true, buffer = true },
       },
 
-      ["<leader>gf"] = {
+      ["<leader>gs"] = {
         action = function()
           vim.cmd('ObsidianTOC')
         end,
@@ -72,6 +72,13 @@ if #workspaces > 0 then
       ["<leader>oL"] = {
         action = function()
           vim.cmd('ObsidianBacklinks')
+        end,
+        opts = { noremap = false, buffer = true },
+      },
+
+      ["<leader>sf"] = {
+        action = function()
+          vim.cmd('ObsidianQuickSwitch')
         end,
         opts = { noremap = false, buffer = true },
       },
