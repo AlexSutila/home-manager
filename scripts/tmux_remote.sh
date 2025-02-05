@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 RES=($(awk '$1 == "Host" {print $2}' ~/.ssh/config | fzf --tmux))
 
 if [ -n "$TMUX" ]; then

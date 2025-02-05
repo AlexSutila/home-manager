@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 GIT="${HOME}/git"
 REPO_PATH=$(find "${GIT}" -iname ".git" -exec sh -c 'echo "{}" | sed "s/\.git$//"' \; | fzf --tmux)
 

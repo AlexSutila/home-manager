@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # For fixing my stupid monitor setup. This script is currently
 # very lame and lazy, as I have to manually comment the line

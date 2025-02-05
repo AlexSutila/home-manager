@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 RES=($(zoxide query -l))
 DEST_PATH=$(printf "%s\n" ${RES[@]} | fzf --tmux)
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ... Mostly, I changed it a little bit lol
 topic_constraint="none"

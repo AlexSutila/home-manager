@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 HOSTNAME="sslvpn.asu.edu/2fa"
 connect() {

@@ -14,6 +14,7 @@
   ];
 
   home.packages = [
+    pkgs.xdg-utils
     pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
     pkgs.ripgrep
@@ -23,7 +24,6 @@
     pkgs.xclip
     pkgs.tree
     pkgs.fzf
-    pkgs.gef # gdb extras
   ];
 
   home.file = {
