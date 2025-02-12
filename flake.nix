@@ -8,8 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     plugin-transfer.url = "github:coffebar/transfer.nvim";
     plugin-transfer.flake = false;
+
+    plugin-table-mode.url = "github:Kicamon/markdown-table-mode.nvim";
+    plugin-table-mode.flake = false;
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

@@ -36,6 +36,22 @@
         "type": "github"
       }
     },
+    "plugin-table-mode": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738470226,
+        "narHash": "sha256-JGc5L+7/eSBww1HaMl0AVcIwEJF/RFqoVRpR3DnP6+E=",
+        "owner": "Kicamon",
+        "repo": "markdown-table-mode.nvim",
+        "rev": "fe207ea7cef615ccaf2c0f1257c58ffa0a50a9f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kicamon",
+        "repo": "markdown-table-mode.nvim",
+        "type": "github"
+      }
+    },
     "plugin-transfer": {
       "flake": false,
       "locked": {
@@ -56,6 +72,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "plugin-table-mode": "plugin-table-mode",
         "plugin-transfer": "plugin-transfer"
       }
     }

@@ -9,6 +9,10 @@
             name = "transfer";
             src = inputs.plugin-transfer;
           };
+          own-table-mode-nvim = prev.vimUtils.buildVimPlugin {
+            name = "markdown-table-mode";
+            src = inputs.plugin-table-mode;
+          };
         };
       })
     ];
@@ -123,6 +127,13 @@
       {
         plugin = pkgs.vimPlugins.obsidian-nvim;
         config = toLuaFile ./nvim/plugin/obsidian.lua;
+      }
+
+      {
+        plugin = pkgs.vimPlugins.own-table-mode-nvim;
+        config = toLua ''
+        require('markdown-table-mode').setup{}
+        '';
       }
 
       pkgs.vimPlugins.vim-tmux-navigator
