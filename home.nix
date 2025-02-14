@@ -8,6 +8,7 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   imports = [
+    ./firefox.nix
     ./vscode.nix
     ./tmux.nix
     ./nvim.nix
