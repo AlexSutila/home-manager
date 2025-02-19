@@ -19,6 +19,7 @@
     pkgs.obsidian # for note-taking
     pkgs.starship # bash prompt
     pkgs.ripgrep
+    pkgs.zathura
     pkgs.zoxide
     pkgs.rsync
     pkgs.scrot # screenshots - helpful for note taking
