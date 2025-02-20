@@ -15,9 +15,12 @@
     ./term.nix # Just for themes, nothing else
     ./tmux.nix
   ];
-  colorScheme = inputs.nix-colors.colorSchemes.onedark;
+  # colorScheme = inputs.nix-colors.colorSchemes.onedark;
   # colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-  # colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
+  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
+  # colorScheme = inputs.nix-colors.colorSchemes.nord;
+  # colorScheme = inputs.nix-colors.colorSchemes.dracula;
+  # colorScheme = inputs.nix-colors.colorSchemes.zenburn;
 
   home.packages = [
     pkgs.xdg-utils
