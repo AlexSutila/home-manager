@@ -5,15 +5,13 @@
     enable = true;
     terminal = "xterm-256color";
     historyLimit = 100000;
-    plugins = with pkgs;
-      [
+    plugins = with pkgs; [
         tmuxPlugins.vim-tmux-navigator
-        # tmuxPlugins.onedark-theme
       ];
     extraConfig = ''
 
     # Apply automated colorscheme
-    run-shell ~/.config/tmux/theme.sh
+    run-shell ~/.scripts/tmux_theme.sh
 
     # Misc sets
     set -g status-position top
@@ -80,17 +78,4 @@
         set -g status on
     '';
   };
-
-  home.file.".config/tmux/palette.sh".text = ''
-  #!/usr/bin/env bash
-  black="#${config.colorScheme.colors.base00}"
-  blue="#${config.colorScheme.colors.base0D}"
-  yellow="#${config.colorScheme.colors.base0A}"
-  red="#${config.colorScheme.colors.base08}"
-  white="#${config.colorScheme.colors.base06}"
-  green="#${config.colorScheme.colors.base0B}"
-  visual_grey="#${config.colorScheme.colors.base01}"
-  comment_grey="#${config.colorScheme.colors.base05}"
-  '';
-  home.file.".config/tmux/theme.sh".source = ./theme/tmux.sh;
 }

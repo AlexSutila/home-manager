@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "${HOME}/.config/tmux/palette.sh"
+source "${HOME}/.theme/palette.sh"
 
 get() {
    local option=$1
