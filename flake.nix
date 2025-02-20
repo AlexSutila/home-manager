@@ -14,6 +14,8 @@
 
     plugin-table-mode.url = "github:Kicamon/markdown-table-mode.nvim";
     plugin-table-mode.flake = false;
+
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

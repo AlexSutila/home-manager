@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "dorce";
@@ -8,11 +8,16 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   imports = [
+    inputs.nix-colors.homeManagerModules.default
     ./firefox.nix
     ./vscode.nix
-    ./tmux.nix
     ./nvim.nix
+    ./term.nix # Just for themes, nothing else
+    ./tmux.nix
   ];
+  colorScheme = inputs.nix-colors.colorSchemes.onedark;
+  # colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  # colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   home.packages = [
     pkgs.xdg-utils
