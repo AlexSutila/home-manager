@@ -16,7 +16,7 @@
     ./tmux.nix
     ./theme.nix
   ];
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   home.packages = [
     pkgs.xdg-utils

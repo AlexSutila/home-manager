@@ -3,7 +3,6 @@
 {
   home.file.".config/kitty/kitty.conf".text = ''
   window_padding_width 12
-  background_opacity 0.90
   enable_audio_bell no
 
   foreground #${config.colorScheme.colors.base06}
