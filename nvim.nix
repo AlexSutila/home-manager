@@ -124,6 +124,7 @@
         '';
       }
 
+      pkgs.vimPlugins.vim-wakatime
       pkgs.vimPlugins.vim-tmux-navigator
       pkgs.vimPlugins.lsp_signature-nvim
       pkgs.vimPlugins.comment-nvim

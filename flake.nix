@@ -21,9 +21,10 @@
     plugin-table-mode.flake = false;
 
     nix-colors.url = "github:misterio77/nix-colors";
+    nixgl.url   = "github:nix-community/nixGL";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixgl, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -37,7 +38,10 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          nixgl = nixgl;
+        };
       };
     };
 }

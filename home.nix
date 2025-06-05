@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixgl, ... }:
 
 {
   home.username = "dorce";
@@ -9,6 +9,7 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    ./alacritty.nix
     ./firefox.nix
     ./vscode.nix
     ./nvim.nix
@@ -16,7 +17,10 @@
     ./tmux.nix
     ./theme.nix
   ];
-  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
+  colorScheme = inputs.nix-colors.colorSchemes.black-metal;
+  nixGL.packages = import nixgl { inherit pkgs; };
+  nixGL.defaultWrapper = "mesa"; # or the driver you need
+  nixGL.installScripts = [ "mesa" ];
 
   home.packages = [
     pkgs.xdg-utils
