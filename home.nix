@@ -10,12 +10,12 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ./alacritty.nix
-    ./firefox.nix
     ./vscode.nix
     ./nvim.nix
     ./term.nix # Just for themes, nothing else
     ./tmux.nix
     ./theme.nix
+    ./git.nix
   ];
   colorScheme = inputs.nix-colors.colorSchemes.black-metal;
   nixGL.packages = import nixgl { inherit pkgs; };
@@ -38,7 +38,7 @@
 
   home.file = {
     ".bash_aliases".source = ./bash_aliases;
-    ".scripts".source = ./scripts;
+    ".local/bin".source = ./scripts;
   };
 
   nixpkgs.config.allowUnfree = true;

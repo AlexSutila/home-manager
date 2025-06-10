@@ -10,8 +10,16 @@
       ];
     extraConfig = ''
 
-    # Apply automated colorscheme
-    run-shell ~/.scripts/tmux_theme.sh
+    # Minimalism
+    set -g status-style bg=default,fg=white,bright
+    set -g status-left "#[fg=green]#(ps -o comm= -t '#{pane_tty}' | tail -n 1): "
+    set -g status-right "#[fg=green,bright]#S"
+    set -g window-status-format "•"
+    set -g window-status-current-format "•"
+    set -g window-status-current-style \
+        "#{?window_zoomed_flag,fg=red,fg=cyan,bold}"
+    set -g pane-active-border-style fg=white,bright
+    set -g pane-border-style fg=white,bright
 
     # Misc sets
     set -g status-position top
@@ -28,6 +36,17 @@
 
     # Remap prefix key
     set -g prefix C-f
+
+    # Huge quality of life hack, alt+n for window switching
+    bind -n M-1 select-window -t :1
+    bind -n M-2 select-window -t :2
+    bind -n M-3 select-window -t :3
+    bind -n M-4 select-window -t :4
+    bind -n M-5 select-window -t :5
+    bind -n M-6 select-window -t :6
+    bind -n M-7 select-window -t :7
+    bind -n M-8 select-window -t :8
+    bind -n M-9 select-window -t :9
 
     # Remap arrows to vim binds
     set-window-option -g mode-keys vi
@@ -62,12 +81,11 @@
     unbind '%'
 
     # Some random workflow binds for navigation and remote work
-    bind-key g run-shell "bash ~/.scripts/tmux_zoxide.sh"
-    bind-key G run-shell "bash ~/.scripts/tmux_repo.sh"
-    bind-key C run-shell "bash ~/.scripts/tmux_remote.sh window"
-    bind-key V run-shell "bash ~/.scripts/tmux_remote.sh hori"
-    bind-key S run-shell "bash ~/.scripts/tmux_remote.sh vert"
-    bind-key i neww bash -c "bash ~/.scripts/istolethis.sh"
+    bind-key g run-shell "bash ~/.local/bin/tmux_zoxide.sh"
+    bind-key C run-shell "bash ~/.local/bin/tmux_remote.sh window"
+    bind-key V run-shell "bash ~/.local/bin/tmux_remote.sh hori"
+    bind-key S run-shell "bash ~/.local/bin/tmux_remote.sh vert"
+    bind-key i neww bash -c "bash ~/.local/bin/istolethis.sh"
 
     # For remote work
     bind -T root F12 set prefix None \;\

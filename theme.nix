@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
 {
-
   home.file.".theme/palette.sh".text = ''
   #!/usr/bin/env bash
   black="#${config.colorScheme.colors.base00}"
@@ -35,5 +34,4 @@
   }
   return colors
   '';
-
 }
