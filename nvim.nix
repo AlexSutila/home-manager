@@ -43,6 +43,13 @@
     plugins = [
 
       {
+        plugin = pkgs.vimPlugins.harpoon2;
+        config = toLua ''
+        require("harpoon"):setup()
+        '';
+      }
+
+      {
         plugin = pkgs.vimPlugins.telescope-nvim;
         config = toLuaFile ./nvim/plugin/telescope.lua;
       }
@@ -237,12 +244,12 @@
     vim.g.colors_name = "gruvbox-dark-medium"
 
     -- Vim editor colors
-    vim.api.nvim_set_hl(0, 'Normal', { fg = gui05, bg = gui00, ctermfg = cterm05, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'Normal', { fg = gui05, bg = gui01, ctermfg = cterm05, ctermbg = cterm00 })
     vim.api.nvim_set_hl(0, 'Bold', { bold = true })
     vim.api.nvim_set_hl(0, 'Debug', { fg = gui08, ctermfg = cterm08 })
     vim.api.nvim_set_hl(0, 'Directory', { fg = gui0D, ctermfg = cterm0D })
-    vim.api.nvim_set_hl(0, 'Error', { fg = gui00, bg = gui08, ctermfg = cterm00, ctermbg = cterm08 })
-    vim.api.nvim_set_hl(0, 'ErrorMsg', { fg = gui08, bg = gui00, ctermfg = cterm08, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'Error', { fg = gui01, bg = gui08, ctermfg = cterm00, ctermbg = cterm08 })
+    vim.api.nvim_set_hl(0, 'ErrorMsg', { fg = gui08, bg = gui01, ctermfg = cterm08, ctermbg = cterm00 })
     vim.api.nvim_set_hl(0, 'Exception', { fg = gui08, ctermfg = cterm08 })
     vim.api.nvim_set_hl(0, 'FoldColumn', { fg = gui0C, bg = gui01, ctermfg = cterm0C, ctermbg = cterm01 })
     vim.api.nvim_set_hl(0, 'Folded', { fg = gui03, bg = gui01, ctermfg = cterm03, ctermbg = cterm01 })
@@ -334,11 +341,11 @@
     vim.api.nvim_set_hl(0, 'DiffChange', { fg = gui03, bg = gui01, ctermfg =  cterm03, ctermbg = cterm01 })
     vim.api.nvim_set_hl(0, 'DiffDelete', { fg = gui08, bg = gui01, ctermfg =  cterm08, ctermbg = cterm01 })
     vim.api.nvim_set_hl(0, 'DiffText', { fg = gui0D, bg = gui01, ctermfg =  cterm0D, ctermbg = cterm01 })
-    vim.api.nvim_set_hl(0, 'DiffAdded', { fg = gui0B, bg = gui00, ctermfg =  cterm0B, ctermbg = cterm00 })
-    vim.api.nvim_set_hl(0, 'DiffFile', { fg = gui08, bg = gui00, ctermfg =  cterm08, ctermbg = cterm00 })
-    vim.api.nvim_set_hl(0, 'DiffNewFile', { fg = gui0B, bg = gui00, ctermfg =  cterm0B, ctermbg = cterm00 })
-    vim.api.nvim_set_hl(0, 'DiffLine', { fg = gui0D, bg = gui00, ctermfg =  cterm0D, ctermbg = cterm00 })
-    vim.api.nvim_set_hl(0, 'DiffRemoved', { fg = gui08, bg = gui00, ctermfg =  cterm08, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'DiffAdded', { fg = gui0B, bg = gui01, ctermfg =  cterm0B, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'DiffFile', { fg = gui08, bg = gui01, ctermfg =  cterm08, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'DiffNewFile', { fg = gui0B, bg = gui01, ctermfg =  cterm0B, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'DiffLine', { fg = gui0D, bg = gui01, ctermfg =  cterm0D, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'DiffRemoved', { fg = gui08, bg = gui01, ctermfg =  cterm08, ctermbg = cterm00 })
 
     -- Git highlighting
     vim.api.nvim_set_hl(0, 'gitcommitOverflow', { fg = gui08, ctermfg = cterm08 })
@@ -428,7 +435,7 @@
 
     -- Markdown highlighting
     vim.api.nvim_set_hl(0, 'markdownCode', { fg = gui0B, ctermfg = cterm0B })
-    vim.api.nvim_set_hl(0, 'markdownError', { fg = gui05, bg = gui00, ctermfg = cterm05, ctermbg = cterm00 })
+    vim.api.nvim_set_hl(0, 'markdownError', { fg = gui05, bg = gui01, ctermfg = cterm05, ctermbg = cterm00 })
     vim.api.nvim_set_hl(0, 'markdownCodeBlock', { fg = gui0B, ctermfg = cterm0B })
     vim.api.nvim_set_hl(0, 'markdownHeadingDelimiter', { fg = gui0D, ctermfg = cterm0D })
 
@@ -668,7 +675,7 @@
     vim.keymap.set('n', '<C-q>'      , ":set wrap!<CR>")
     vim.keymap.set('n', 'H', ":bprevious<CR>")
     vim.keymap.set('n', 'L', ":bnext<CR>")
-    vim.keymap.set("n", "<leader><leader>",
+    vim.keymap.set("n", "<tab><tab>",
         "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>")
     vim.keymap.set('n', '<leader>t'  , ":NERDTreeToggle<CR>")
     vim.keymap.set('n', '<leader>uu' , ":TransferUpload .<CR>")
@@ -677,6 +684,14 @@
     vim.keymap.set('n', '<leader>sf'  , builtin.find_files, {})
     vim.keymap.set('n', '<leader>sg'  , builtin.live_grep, {})
     vim.keymap.set('n', '<leader>sd'  , builtin.diagnostics , {})
+
+    local harpoon = require('harpoon')
+    vim.keymap.set('n', '<leader><leader>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+    vim.keymap.set('n', 'M', function() harpoon:list():add() end)
+    vim.keymap.set('n', '<M-f>', function() harpoon:list():select(1) end)
+    vim.keymap.set('n', '<M-d>', function() harpoon:list():select(2) end)
+    vim.keymap.set('n', '<M-s>', function() harpoon:list():select(3) end)
+    vim.keymap.set('n', '<M-a>', function() harpoon:list():select(4) end)
 
     -- For note taking specifically, this plugin is great
     vim.keymap.set('n', '<leader>ot'  , ':ObsidianTags<CR>', {

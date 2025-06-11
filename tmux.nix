@@ -11,9 +11,9 @@
     extraConfig = ''
 
     # Minimalism
-    set -g status-style bg=default,fg=white,bright
-    set -g status-left "#[fg=green]#(ps -o comm= -t '#{pane_tty}' | tail -n 1): "
-    set -g status-right "#[fg=green,bright]#S"
+    set -g status-style bg=#${config.colorScheme.colors.base01},fg=#${config.colorScheme.colors.base0C},bright
+    set -g status-left "#[bg=#${config.colorScheme.colors.base0A},fg=#${config.colorScheme.colors.base01}] #(ps -o comm= -t '#{pane_tty}' | tail -n 1 | cut -c1-6) #[bg=#${config.colorScheme.colors.base01},fg=#${config.colorScheme.colors.base0A}] "
+    set -g status-right "#[bg=#${config.colorScheme.colors.base01},fg=#${config.colorScheme.colors.base0A},bright]#[bg=#${config.colorScheme.colors.base0A},fg=#${config.colorScheme.colors.base01},bright] #S "
     set -g window-status-format "•"
     set -g window-status-current-format "•"
     set -g window-status-current-style \
